@@ -61,8 +61,8 @@ public class ReconocerTexto extends AppCompatActivity {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         camaraARL.launch(intent);
-
     }
+
 
     private ActivityResultLauncher<Intent> galeriaARL = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -74,7 +74,7 @@ public class ReconocerTexto extends AppCompatActivity {
                         uri = data.getData();
                         image.setImageURI(uri);
                     }else {
-                        Toast.makeText(ReconocerTexto.this, "Cancelado por el usuario", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReconocerTexto.this, "Acción cancelada por el usuario", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -87,8 +87,8 @@ public class ReconocerTexto extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK){
                         image.setImageURI(uri);
-                    }else {
-                        Toast.makeText(ReconocerTexto.this, "Cancelado por el usuario", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(ReconocerTexto.this, "Acción cancelada por el usuario", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -108,8 +108,8 @@ public class ReconocerTexto extends AppCompatActivity {
             //Toast.makeText(this, "Abrir galeria", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.Menu_abrir_camara){
-            //AbrirCamara();
-            Toast.makeText(this, "Abrir camara", Toast.LENGTH_SHORT).show();
+            AbrirCamara();
+            //Toast.makeText(this, "Abrir camara", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
