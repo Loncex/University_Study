@@ -1,5 +1,6 @@
 package com.example.app_universidad3;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -24,9 +25,9 @@ public class Reconocer extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_reconocer, container, false);
+        View view = inflater.inflate(R.layout.fragment_reconocer, container, false);
 
-        BtnIngresar = v.findViewById(R.id.BtnIngresar);
+        BtnIngresar = view.findViewById(R.id.BtnIngresar);
 
         BtnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,8 @@ public class Reconocer extends Fragment {
             }
         });
 
-        return v;
+        return view;
     }
+
+
 }
