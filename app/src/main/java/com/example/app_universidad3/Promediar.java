@@ -77,7 +77,7 @@ public class Promediar extends Fragment {
         double promedio = (nota1 * ponderacion1 + nota2 * ponderacion2 + nota3 * ponderacion3 + nota4 * ponderacion4) / (ponderacion1 + ponderacion2 + ponderacion3 + ponderacion4);
 
         DecimalFormat df = new DecimalFormat("#.##"); // Redondear a 2 decimales
-        String resultado = "El promedio ponderado es: " + df.format(promedio);
+        String resultado = "Su promedio es: " + df.format(promedio);
 
         textViewResultado.setText(resultado);
     }

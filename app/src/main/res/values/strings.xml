@@ -27,19 +27,28 @@
     <string name="Btn_Logeo">Ingresar</string>
     <string name="UsuarioNuevoTXT">¿No tienes cuenta?</string>
 
+    <!--Inicio-->
+    <string name="BienvenidoPrincipal">Bienvenido(a)</string>
+    <string name="NombresPrincipal"> -- </string>
+    <string name="CorreoPrincipal"> -- </string>
+
+    <string name="BtnApuntes">Apuntes</string>
+    <string name="BtnGrupos">Grupos</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment">Estoy en el Inicio</string>
     <string name="fragment2">Estoy en Promediar</string>
     <string name="fragment3">Estoy en Reconocer</string>
     <string name="fragment4">Estoy en Salir </string>
 
+    <!--BOTON HACIA EL LECTOR DE TEXTO-->
     <string name="BtnIngresar">Ingresar al Lector de Texto</string>
 
     <!--RECONOCER TEXTO-->
     <string name="ReconocerTexto">Reconocer Texto</string>
     <string name="ReconocerTXT">Texto Reconocido:</string>
     <string name="TextoReconocidoEt"> -- </string>
-    
+
     <string name="Menu_abrir_galeria">Abrir galeria</string>
     <string name="Menu_abrir_camara">Abrir camara</string>
 

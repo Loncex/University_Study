@@ -13,6 +13,15 @@
         android:theme="@style/Theme.App_Universidad3"
         tools:targetApi="31">
         <activity
+            android:name=".AgregarNotas"
+            android:exported="false" />
+        <activity
+            android:name=".Grupos"
+            android:exported="false" />
+        <activity
+            android:name=".Apuntes"
+            android:exported="false" />
+        <activity
             android:name=".ReconocerTexto"
             android:exported="false" />
         <activity

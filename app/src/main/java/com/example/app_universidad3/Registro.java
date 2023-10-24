@@ -23,6 +23,8 @@ import java.util.Map;
 
 public class Registro extends AppCompatActivity {
 
+    Button TengounacuentaTXT;
+
     private EditText NombreEt;
     private EditText CorreoEt;
     private EditText ContraseñaEt;
@@ -51,6 +53,9 @@ public class Registro extends AppCompatActivity {
         ContraseñaEt = (EditText) findViewById(R.id.ContraseñaEt);
         RegistrarUsuario = (Button) findViewById(R.id.RegistrarUsuario);
 
+        TengounacuentaTXT = findViewById(R.id.TengounacuentaTXT);
+
+
         RegistrarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +75,13 @@ public class Registro extends AppCompatActivity {
                 else{
                     Toast.makeText(Registro.this, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        TengounacuentaTXT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Registro.this, Login.class));
             }
         });
 

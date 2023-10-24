@@ -6,96 +6,121 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:text="Promediar Notas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
-        android:textSize="25sp"
-        android:gravity="center"/>
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/editTextNota1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Nota 1" />
+        <TextView
+            android:text="Promediar Notas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:gravity="center"/>
 
-    <EditText
-        android:id="@+id/editTextPonderacion1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Ponderación 1" />
+        <EditText
+            android:id="@+id/editTextNota1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Nota 1" />
 
-    <EditText
-        android:id="@+id/editTextNota2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Nota 2" />
+        <EditText
+            android:id="@+id/editTextPonderacion1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Ponderación 1" />
 
-    <EditText
-        android:id="@+id/editTextPonderacion2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Ponderación 2" />
+        <EditText
+            android:id="@+id/editTextNota2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Nota 2" />
 
-    <EditText
-        android:id="@+id/editTextNota3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Nota 3" />
+        <EditText
+            android:id="@+id/editTextPonderacion2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Ponderación 2" />
 
-    <EditText
-        android:id="@+id/editTextPonderacion3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Ponderación 3" />
+        <EditText
+            android:id="@+id/editTextNota3"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Nota 3" />
 
-    <EditText
-        android:id="@+id/editTextNota4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Nota 4" />
+        <EditText
+            android:id="@+id/editTextPonderacion3"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Ponderación 3" />
 
-    <EditText
-        android:id="@+id/editTextPonderacion4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Ponderación 4" />
+        <EditText
+            android:id="@+id/editTextNota4"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Nota 4" />
 
-    <Button
-        android:id="@+id/calcularButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:text="Calcular Promedio"
-        android:onClick="calcularPromedio"/>
+        <EditText
+            android:id="@+id/editTextPonderacion4"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:hint="Ponderación 4" />
 
-    <TextView
-        android:id="@+id/textViewResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginTop="5dp"
-        android:textSize="25sp" />
+        <Button
+            android:id="@+id/calcularButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:text="Calcular Promedio"
+            android:onClick="calcularPromedio"/>
+
+        <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text=""
+            android:layout_marginTop="5dp"
+            android:textSize="25sp" />
+
 
 </LinearLayout>
