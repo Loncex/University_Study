@@ -53,9 +53,9 @@ public class ReconocerTexto extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
 
-        ReconocerTexto = findViewById(R.id.ReconocerTexto);
-        image = findViewById(R.id.image);
-        TextoReconocidoEt = findViewById(R.id.TextoReconocidoEt);
+        ReconocerTexto = (Button) findViewById(R.id.ReconocerTexto);
+        image = (ImageView) findViewById(R.id.image);
+        TextoReconocidoEt = (EditText) findViewById(R.id.TextoReconocidoEt);
 
         textRecognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
 

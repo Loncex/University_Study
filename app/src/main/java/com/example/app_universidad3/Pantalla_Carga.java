@@ -23,4 +23,5 @@ public class Pantalla_Carga extends AppCompatActivity {
         },Tiempo);
 
     }
+
 }

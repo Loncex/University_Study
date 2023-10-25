@@ -27,7 +27,7 @@ public class Reconocer extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_reconocer, container, false);
 
-        BtnIngresar = view.findViewById(R.id.BtnIngresar);
+        BtnIngresar = (Button) view.findViewById(R.id.BtnIngresar);
 
         BtnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override

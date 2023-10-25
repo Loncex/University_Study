@@ -2,8 +2,8 @@
     <string name="app_name">University Study</string>
 
     <!--MAIN ACTIVITY-->
-    <string name="Btn_Login">Login</string>
-    <string name="Btn_Registro">Registro</string>
+    <string name="Btn_Login">Ingresar</string>
+    <string name="Btn_Registro">Registrarse</string>
 
     <!--BOTTOM BAR-->
     <string name="Inicio">Inicio</string>

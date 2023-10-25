@@ -53,7 +53,7 @@ public class Registro extends AppCompatActivity {
         ContraseñaEt = (EditText) findViewById(R.id.ContraseñaEt);
         RegistrarUsuario = (Button) findViewById(R.id.RegistrarUsuario);
 
-        TengounacuentaTXT = findViewById(R.id.TengounacuentaTXT);
+        TengounacuentaTXT = (Button) findViewById(R.id.TengounacuentaTXT);
 
 
         RegistrarUsuario.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +88,6 @@ public class Registro extends AppCompatActivity {
     }
 
     private void registerUser() {
-        Toast.makeText(this, "Correo", Toast.LENGTH_SHORT).show();
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -115,7 +114,7 @@ public class Registro extends AppCompatActivity {
                                 startActivity(new Intent(Registro.this, MenuPrincipal.class));
                                 finish();
                             } else {
-                                Toast.makeText(Registro.this, "no se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Registro.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -125,4 +124,5 @@ public class Registro extends AppCompatActivity {
             }
         });
     }
+
 }
