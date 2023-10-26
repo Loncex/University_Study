@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -16,17 +18,42 @@ public class AgregarNotas extends AppCompatActivity {
 
     EditText titleEditText, contentEditText;
     ImageButton Btn_saveNote;
+    TextView pageTitleTextView;
+    String title, content, docId;
+    boolean isEditMode = false;
+    TextView deletenoteTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_notas);
 
-        titleEditText = findViewById(R.id.notes_title);
-        contentEditText = findViewById(R.id.notes_content);
-        Btn_saveNote = findViewById(R.id.Btn_save_note);
+        titleEditText = (EditText) findViewById(R.id.notes_title);
+        contentEditText = (EditText) findViewById(R.id.notes_content);
+        Btn_saveNote = (ImageButton) findViewById(R.id.Btn_save_note);
+        pageTitleTextView = (TextView) findViewById(R.id.title_page);
+        deletenoteTextView = (TextView) findViewById(R.id.Btn_delete_note);
 
-        Btn_saveNote.setOnClickListener((v)-> saveNote());
+        //data
+        title = getIntent().getStringExtra("title");
+        content= getIntent().getStringExtra("content");
+        docId = getIntent().getStringExtra("docId");
+
+        if(docId!=null && !docId.isEmpty()){
+            isEditMode = true;
+        }
+
+        titleEditText.setText(title);
+        contentEditText.setText(content);
+
+        if(isEditMode){
+            pageTitleTextView.setText("Edita tu Apunte");
+            deletenoteTextView.setVisibility(View.VISIBLE);
+        }
+
+
+        Btn_saveNote.setOnClickListener((v) -> saveNote());
+        deletenoteTextView.setOnClickListener((v)-> deleteNoteFromFirebase());
 
     }
 
@@ -48,17 +75,42 @@ public class AgregarNotas extends AppCompatActivity {
 
     void saveNoteToFirebase(Note note){
         DocumentReference documentReference;
-        documentReference = Utility.getCollectionreferenceForNotes().document();
+        if(isEditMode){
+            //actualizar apunte existente
+            documentReference = Utility.getCollectionreferenceForNotes().document(docId);
+        }else{
+            //Crear nuevo apunte
+            documentReference = Utility.getCollectionreferenceForNotes().document();
+        }
 
         documentReference.set(note).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    //notas fueron agregadas
-                    Utility.showToast(AgregarNotas.this, "Nota Agregada Correctamente");
+                    //las notas fueron agregadas
+                    Utility.showToast(AgregarNotas.this, "Apunte Agregado Correctamente");
                     finish();
                 }else{
-                    Utility.showToast(AgregarNotas.this, "No se pudo agregar la nota :(");
+                    Utility.showToast(AgregarNotas.this, "No se pudo agregar el apunte :(");
+                }
+            }
+        });
+
+    }
+
+    private void deleteNoteFromFirebase(){
+        DocumentReference documentReference;
+        documentReference = Utility.getCollectionreferenceForNotes().document(docId);
+
+        documentReference.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    //el apunte fue borrado
+                    Utility.showToast(AgregarNotas.this, "Apunte eliminado correctamente");
+                    finish();
+                }else{
+                    Utility.showToast(AgregarNotas.this, "No se pudo borrar el apunte :(");
                 }
             }
         });

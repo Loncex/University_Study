@@ -17,7 +17,6 @@ public class Apuntes extends AppCompatActivity {
 
     FloatingActionButton agregarNota;
     RecyclerView recyclerView;
-    ImageButton imageButton;
     NoteAdapter noteAdapter;
 
     @Override
@@ -27,16 +26,10 @@ public class Apuntes extends AppCompatActivity {
 
         agregarNota =  (FloatingActionButton) findViewById(R.id.BtnAgregarNota);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        imageButton = (ImageButton) findViewById(R.id.Btn_menu);
 
         agregarNota.setOnClickListener((v -> startActivity(new Intent(Apuntes.this, AgregarNotas.class))));
-        imageButton.setOnClickListener((v)->showMenu());
         setupRecyclerView();
 
-    }
-
-    private void showMenu() {
-        //Display Menu
     }
 
     private void setupRecyclerView() {
