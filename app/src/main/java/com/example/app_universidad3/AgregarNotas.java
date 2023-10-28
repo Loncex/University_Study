@@ -51,7 +51,6 @@ public class AgregarNotas extends AppCompatActivity {
             deletenoteTextView.setVisibility(View.VISIBLE);
         }
 
-
         Btn_saveNote.setOnClickListener((v) -> saveNote());
         deletenoteTextView.setOnClickListener((v)-> deleteNoteFromFirebase());
 

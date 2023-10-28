@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@color/colorPrimaryDark"
     tools:context=".AgregarNotas">
 
     <RelativeLayout
@@ -19,7 +18,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/title_page"
             android:text="Agregar Nuevo Apunte"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:fontFamily="@font/roboto"/>
 
@@ -41,7 +40,7 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_marginVertical="26dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/grey"
         android:background="@drawable/border_background">
 
         <EditText
@@ -51,9 +50,10 @@
             android:hint="Titulo"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:gravity="center"
             android:layout_marginVertical="8dp"
             android:padding="12dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -79,6 +79,6 @@
         android:gravity="center"
         android:textSize="20sp"
         android:visibility="gone"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
 </RelativeLayout>

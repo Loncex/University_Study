@@ -38,6 +38,7 @@ public class Salir extends Fragment {
                 mAuth.signOut();
                 Intent intent = new Intent(requireContext(), MainActivity.class);
                 startActivity(intent);
+                //getActivity().finish();
             }
         });
 
